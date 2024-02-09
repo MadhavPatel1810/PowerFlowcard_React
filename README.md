@@ -5,8 +5,5 @@
 
 # Referense card
 - GitHub: https://github.com/flixlix/power-flow-card-plus
-- 
-
-
-https://github.com/MadhavPatel1810/PowerFlowcard_React/assets/86973682/010e1310-8cfc-49cc-a868-52ae95a68257
+- https://user-images.githubusercontent.com/61006057/227771568-78497ecc-e863-46f2-b29e-e15c7c20a154.gif
 
