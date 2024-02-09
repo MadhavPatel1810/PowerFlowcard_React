@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.powerFlow {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+.BlocksDesc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow-animation path {
+  stroke-dasharray: 10 15;
+  animation: dash 1s linear infinite;
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: -25;
+  }
+}
+
+.arrow-reverse-animation path {
+  stroke-dasharray: 10 15;
+  animation: reverse-dash 1s linear infinite;
+}
+@keyframes reverse-dash {
+  to {
+    stroke-dashoffset: 25;
+  }
+}
+

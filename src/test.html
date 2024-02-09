@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Management</title>
+    <style>
+      #content {
+        margin: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content"></div>
+    <button id="prevButton" onclick="showContent(-1)">Previous</button>
+    <button id="nextButton" onclick="showContent(1)">Next</button>
+
+    <script>
+      // Array of content items
+      var contentItems = [
+        `<div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            Password Generator
+          </h2>
+          <p className="mt-2 text-lg leading-8 text-gray-600">
+            Generate robust passwords for enhanced online security.
+          </p>
+        </div>`,
+        `<div className="mt-2.5">
+          <input
+            readOnly
+            type="text"
+            value={password}
+            ref={passwordRef}
+            autoComplete="given-name"
+            className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+          />
+        </div>`,
+        `<div>
+          <label className="block text-sm font-semibold leading-6 text-gray-900">
+            Create Password
+          </label>
+          <div className="mt-2.5">
+            <input
+              readOnly
+              type="text"
+              value={password}
+              ref={passwordRef}
+              autoComplete="given-name"
+              className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>`
+        // Add more content items as needed
+      ];
+
+      var currentIndex = 0; // Index of the currently displayed content
+
+      // Function to display content based on the given index
+      function showContent(index) {
+        currentIndex += index;
+
+        // Ensure the index stays within the bounds of the array
+        if (currentIndex < 0) {
+          currentIndex = contentItems.length - 1;
+        } else if (currentIndex >= contentItems.length) {
+          currentIndex = 0;
+        }
+
+        // Display the content
+        document.getElementById("content").innerHTML = contentItems[currentIndex];
+      }
+
+      // Initial display
+      showContent(currentIndex);
+    </script>
+  </body>
+</html>
